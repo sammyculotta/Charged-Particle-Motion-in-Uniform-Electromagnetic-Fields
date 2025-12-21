@@ -12,15 +12,11 @@ The code is written in **Python** using **NumPy** and is designed to be modular,
 
 The motion of a charged particle with charge \( q \) and mass \( m \) in electric and magnetic fields is governed by the **Lorentz force**:
 
-\[
-\mathbf{F} = q \left( \mathbf{E} + \mathbf{v} \times \mathbf{B} \right)
-\]
+F = q ( E + v × B )
 
 Using Newton’s second law,
 
-\[
-\mathbf{a} = \frac{\mathbf{F}}{m} = \frac{q}{m} \left( \mathbf{E} + \mathbf{v} \times \mathbf{B} \right)
-\]
+a = F / m = (q / m) ( E + v × B )
 
 ### Key Physical Behaviors
 
@@ -49,9 +45,7 @@ The equations of motion are integrated using the **velocity Verlet method**, a s
 
 **Position update:**
 
-\[
-\mathbf{r}_{n+1} = \mathbf{r}_n + \mathbf{v}_n \Delta t + \frac{1}{2}\mathbf{a}_n \Delta t^2
-\]
+r_{n+1} = r_n + v_n Δt + (1/2) a_n Δt^2
 
 **Acceleration update:**
 
@@ -59,9 +53,7 @@ The new acceleration is computed using the updated position and velocity-depende
 
 **Velocity update:**
 
-\[
-\mathbf{v}_{n+1} = \mathbf{v}_n + \frac{1}{2}\left( \mathbf{a}_n + \mathbf{a}_{n+1} \right)\Delta t
-\]
+v_{n+1} = v_n + (1/2) (a_n + a_{n+1}) Δt
 
 ---
 
