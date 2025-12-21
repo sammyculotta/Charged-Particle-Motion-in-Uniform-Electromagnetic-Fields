@@ -148,7 +148,7 @@ For a velocity perpendicular to B, this results in circular motion with:
 
 ### Results and Comparison to Theory
 
-![Cyclotron Motion](output/cyclotron_motion.png)
+![Cyclotron Motion](images/cyclotron_motion.png)
 
 - The simulation produces a circular trajectory in the xy-plane.
 - The orbit radius matches the theoretical cyclotron radius r_c = m v / (q B) = 1.0
