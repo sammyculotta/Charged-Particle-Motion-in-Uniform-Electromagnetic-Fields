@@ -4,7 +4,6 @@
 
 This project simulates the motion of a charged particle in uniform electric and magnetic fields using the **velocity Verlet integration method**. The simulation numerically solves the classical equations of motion derived from the **Lorentz force law**, allowing one to study trajectories such as linear acceleration, circular motion, and helical motion depending on the applied fields.
 
-The code is written in **Python** using **NumPy** and is designed to be modular, readable, and easily extensible to more general field configurations.
 
 ---
 
@@ -33,13 +32,11 @@ a = F / m = (q / m) ( E + v × B )
 
 ## Numerical Method: Velocity Verlet Integration
 
-The equations of motion are integrated using the **velocity Verlet method**, a second-order, time-reversible algorithm commonly used in computational physics.
+The equations of motion are integrated using the **velocity Verlet method**, a second-order, time-reversible algorithm.
 
 ### Advantages of Velocity Verlet
 
-- Second-order accuracy in time
-- Good energy conservation properties
-- Widely used in plasma physics and molecular dynamics
+Second-order accuracy in time, good energy conservation properties
 
 ### Update Scheme
 
@@ -98,7 +95,7 @@ Runs the time evolution loop and stores position and velocity histories for anal
 ---
 ## Cyclotron Motion Example
 
-As an illustrative example, we simulate a charged particle moving in a uniform magnetic field with no electric field. This is a classic scenario in plasma and accelerator physics, known as cyclotron motion.
+As an illustrative example, we simulate a charged particle moving in a uniform magnetic field with no electric field. 
 
 ### Physics Background
 
@@ -152,8 +149,8 @@ For a velocity perpendicular to B, this results in circular motion with:
 
 - The simulation produces a circular trajectory in the xy-plane.
 - The orbit radius matches the theoretical cyclotron radius r_c = m v / (q B) = 1.0
-- A slowly decreasing orbit radius does indicate that kinetic energy is not perfectly conserved, but this is normal for numerical simulations.
-- With a smaller time step or a symplectic integrator specialized for magnetic motion, this effect can be minimized.
+- A slowly increasing orbit radius is a numerical artifact caused by using the velocity verlet integration method.
+- With a smaller time step or a symplectic integrator specialized for magnetic motion, such as the Boris pusher method, this effect can be minimized.
 - The angular frequency matches the cyclotron frequency ω_c = q B / m = 1.0
 - Kinetic energy is conserved over multiple orbits, demonstrating the stability of the velocity Verlet method.
 
